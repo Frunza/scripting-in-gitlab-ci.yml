@@ -11,7 +11,7 @@ While it is easy to add a single command like this:
 ```
 , how do you add something more complex like:
 ```sh
-      if [ "$CI_COMMIT_REF_NAME" = "master" ]; then
+      if [ "$CI_COMMIT_REF_NAME" = "main" ]; then
         export DEPLOYMENT_TARGET="production"
       else
         export DEPLOYMENT_TARGET="development"
@@ -22,7 +22,7 @@ While it is easy to add a single command like this:
 Obviously:
 ```sh
   script:
-    - if [ "$CI_COMMIT_REF_NAME" = "master" ]; then
+    - if [ "$CI_COMMIT_REF_NAME" = "main" ]; then
     - export DEPLOYMENT_TARGET="production"
     - else
     - export DEPLOYMENT_TARGET="development"
@@ -40,7 +40,7 @@ The correct way to add the code to the `script` section of the pipeline is:
 ```sh
   script:
     - >
-      if [ "$CI_COMMIT_REF_NAME" = "master" ]; then
+      if [ "$CI_COMMIT_REF_NAME" = "main" ]; then
         export DEPLOYMENT_TARGET="production"
       else
         export DEPLOYMENT_TARGET="development"

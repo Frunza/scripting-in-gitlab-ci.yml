@@ -7,7 +7,7 @@ build:
   stage: build
   script:
     - >
-      if [ "$CI_COMMIT_REF_NAME" = "master" ]; then
+      if [ "$CI_COMMIT_REF_NAME" = "main" ]; then
         export DEPLOYMENT_TARGET="production"
       else
         export DEPLOYMENT_TARGET="development"
